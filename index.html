@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HOME - BooksTycoon</title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- using swipper for slider swipper from https://swiperjs.com/get-started -->
+	<link rel="stylesheet" href="./style/style.css">
+	<link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css">
+	
+</head>
+<body>
+	<header>
+		<div class="top">
+			<div class="logo">
+				<div class="icon"><i class="fas fa-book"></i></div>
+				<div class="lg">BOOKS</div>
+				<div class="lg"><span>TYCOON</span></div>
+			</div>
+					<div class="contactbox">
+						<a onmouseup="Contactus()">0301-9048314 <i class="fas fa-phone"></i></a>
+						<a onmouseup="Contactus()">bookstycoon@gmail.com <i class="fa-solid fa-envelope"></i></a>
+					</div>
+		
+		</div>
+		<div class="nav-bar">
+			<a href="#homebook"><i class="fas fa-house"></i></a>
+			<a href="#Featurebook">featured</a>
+			<a href="#Reviewbook">Review</a>
+			<a href="#Newarrival">Arrival</a>
+			
+			<div>	
+			<a  id="dropd" > Book <i class="fa-solid fa-caret-down"></i></a>
+			<div class="dropdown">
+				
+				<div class="dropdown-content"><a href="./Romantic.html">Romantic</a></div>
+				<div class="dropdown-content"><a href="./Comic.html">Comic</a></div>
+				<div class="dropdown-content"><a href="./Manga.html">Manga</a></div>
+				<div class="dropdown-content"><a href="./Historical.html">Historical Fiction</a></div>
+				<div class="dropdown-content"><a href="./Action.html">Action & Adventure</a></div>
+			</div>
+			</div>
+			<a href="#about">About Us</a>
+			<a  onmouseup="Contactus()">Contact Us</a>
+			<div class="toggler">
+			<img src="./image/toggle.png" alt="">	
+			</div>
+		</div>
+		
+			<div class="rateus">
+				<button type="button" onclick="addratebox()">RATE US</button>
+			</div>
+
+			<div class="ratebox">
+				<div class="cbox">
+					<h1> Rate us </h1>
+                    <div class="rate">
+                    	        <input type="radio" name="star" id="star1"> <label for="star1"></label>
+                    			
+                    			<input type="radio" name="star" id="star2"> <label for="star2"></label>
+                    			
+                    			<input type="radio" name="star" id="star3"> <label for="star3"></label>
+                    			
+                    			<input type="radio" name="star" id="star4"> <label for="star4"></label>
+                    			
+                    			<input type="radio" name="star" id="star5"> <label for="star5"></label>			
+                    			
+                     </div>
+                    <button type="button" onclick="ratethankyou()">RATE</button>
+				</div>
+				<div class="ratebox-end" onclick="removeratebox()">X</div>
+				<div class="v-box">
+					<h1>Thank You</h1>
+					<i class="fa-solid fa-face-smile-beam"></i>
+					<div class="v-end"><i class="fa-solid fa-xmark" onclick="removevbox()"></i></div>
+				</div>	
+			</div>
+
+			<div class="rightbox">
+				<i class="fa-solid fa-cart-shopping" class="cart"  onclick="showcart()"></i>
+			</div>
+
+			<div class="cartshow">
+				
+					<div class="heading">
+						<h1>CART	<i class="fa-solid fa-cart-shopping"></i></h1>
+					</div>
+
+					<div class="contenttobuy">
+						
+							<div class="head">
+									<span>BOOK</span>
+									<span>Price</span>
+									<span>Amount</span>
+						</div>	
+						<div class="buylist">
+							<div class="cbox">
+							  <div class="rbox">
+							  	<p>Peer e kamel</p>
+									<span class="pricetoget">$16.00</span>
+									<input type="number" name="" id="t-1" value="0">	 
+							  </div>
+							  <div class="rbox">
+							    <p>Attack on titan</p>
+									<span class="pricetoget">$24.00</span>
+									<input type="number" name="" id="t-1" value="0">	 
+							  </div>
+							
+								<div class="rbox">
+							  	<p>Ego is Enemy</p>
+									<span class="pricetoget">$12.00</span>
+									<input type="number" name="" id="t-1" value="0">	 
+								 </div>
+							
+								<div class="rbox">
+									<p>Forty Rules of Love</p>
+									<span class="pricetoget">$14.00</span>
+									<input type="number" name="" id="t-1" value="0">	 
+								 </div>
+								
+
+								<div class="rbox">
+									<p>Aliens Inflitrators</p>
+									<span class="pricetoget">$17.00</span>
+									<input type="number" name="" id="t-1" value="0">	 
+								 </div>
+
+								<div class="rbox">
+									<p>The Nine inside the secret world</p>
+									<span class="pricetoget">$15.00</span>
+									<input type="number" name="" id="t-1" value="0">	 
+								 </div>
+
+
+								<div class="rbox">
+									<p>Sherlock Holmes</p>
+									<span class="pricetoget">$22.00</span>
+									<input type="number" name="" id="t-1" value="0">	 
+								 </div>
+							</div>
+
+							<div class="rbox">
+									<p>Harry Potter</p>
+									<span class="pricetoget">$30.00</span>
+									<input type="number" name="" id="t-1" value="0">	 
+								 </div>
+							</div>
+						</div>		
+						
+						<div class="lastclm">
+							<div class="grandtotal">
+								<span>Total</span>
+								<input type="number" id="G-t" disabled>
+							</div>
+						<button class="buy">BUY</button>
+						</div>
+					<div class="cancel" onclick="clearcart()"><i class="fas fa-xmark"></i></div>
+					</div>
+
+			</div>
+
+	</header>
+	
+
+	<main>
+		<section  id="homebook">
+		<div class="slider firstslider">
+				<div class="slider-main" id="sld_m">	
+				
+				<div class="header-slider">
+					<span> TOP FAVORITE</span>
+				</div>
+
+				<div class="swiper  mySwiper">
+				      	<div class="swiper-wrapper">
+				        <div book-name="William Shakespeare" class="swiper-slide" >
+				          <img src="./image/book1.jpg" />
+				        </div>
+				        <div book-name="Zachary Kekac" class="swiper-slide">
+				          <img src="./image/book2.jpg" />
+				        </div>
+				        <div book-name="Frank McLynn" class="swiper-slide">
+				          <img src="./image/book3.jpeg" />
+				        </div>
+				        <div book-name="Hajime Isayama" class="swiper-slide">
+				          <img src="./image/book4.jpeg" />
+				        </div>
+				        <div book-name="Ernest Dempsey" class="swiper-slide">
+				          <img src="./image/book5.jpg" />
+				        </div>
+				        <div book-name="Arthur Conan Doyle" class="swiper-slide">
+				          <img src="./image/bookadv.jpg" />
+				        </div>
+				        <div book-name="Kati   Marton" class="swiper-slide">
+				          <img src="./image/book1-1.jpg" />
+				        </div>
+				        <div book-name="Stan Lee" class="swiper-slide">
+				          <img src="./image/book -1.jpg" />
+				        </div>
+				      </div>
+				      <div class="swiper-pagination"></div>
+				    </div>
+						
+			
+				</div>
+
+		</div>
+</section>
+
+
+		<section>
+			<div class="contactus">
+				
+				<div class="backgroundimg"><img src="./image/bgimgcontact.jpg"></div>
+				
+				<div class="cross" ><i class="fa-solid fa-square-xmark" onclick="crossbox()"></i></div>
+				<div class="v-box">
+					<h1>Thank You</h1>
+					<i class="fa-solid fa-face-smile-beam"></i>
+					<p>We have Recived Your Message</p>
+					<div class="v-end"><i class="fa-solid fa-circle-xmark" onclick="removevbox()"></i></div>
+				</div>	
+					
+
+					<form onsubmit="sendmail()">
+			        	
+			        	<div class="cbox">
+			        		<h1 class="text-center">CONTACT US</h1>
+			        		<div class="rbox">
+				        		
+				        		<div class="cbox">	
+				        			<input type="text" id="name" placeholder="User name">
+				        			<p id="e1"></p>
+				        		</div>
+
+				        		<div class="cbox">
+				        		<input type="email" id="mail" onkeydown="validmail()" placeholder="Email@mail.com">
+				        		<p id="e2"></p>
+			        		
+				        		<div class="valid"><i class="fa"><i class="fa-solid fa-circle-check"></i></div>
+			        			<div class="invalid"><i class="fa-solid fa-circle-xmark"></i></i></div>
+			        		</div>
+			        		</div>
+			        		<span>Feed Back</span>	
+			        		<textarea name="feedback" id="message" ></textarea>
+
+			        		<button type="submit" id="send" onclick="validate();"  > SEND</button>
+			        	</div>
+
+
+			        		<!--onmouseup="thankyou()"-->
+					</form>
+		
+			</div>
+							
+		</section>
+
+
+			<section class="icons-container">
+				<div class="rbox">
+				<div class="cbox">
+					    <div class="icons">
+					    	<div class="ic"><i class="fas fa-shipping-fast"></i>
+					        </div>
+					        <div class="content">
+					            <h3>free shipping</h3>
+					            <span>order over $100</span>
+					        </div>
+					    </div>
+
+					    <div class="icons">
+					       <div class="ic">
+					       	 <i class="fas fa-lock"></i>
+					       </div>
+					        <div class="content">
+					            <h3>secure payment</h3>
+					            <span>100 secure payment</span>
+					        </div>
+					    </div>
+				</div>
+				<div class="cbox">
+					    <div class="icons">
+					    	<div class="ic">
+        						<i class="fas fa-headset"></i>
+					        </div>
+					        <div class="content">
+					            <h3>24/7 support</h3>
+					            <span>call us any time</span>
+					        </div>
+					    </div>
+
+					    <div class="icons">
+					       <div class="ic">
+      							  <i class="fas fa-redo-alt"></i>
+					       </div>
+					        <div class="content">
+					            <h3>easy returns</h3>
+					            <span>10 days returns</span>
+					        </div>
+					         </div>
+			    </div>
+			</section>
+
+				<!-- featured section starts  -->
+			<section class="featuredbooks" id="Featurebook">
+			
+					<div class="featured" id="featured">
+						<div class="startheading"><h1>Featured </h1></div>
+
+
+					    <div class="swiper featured-slider">
+
+					        <div class="swiper-wrapper">
+
+					            <div class="swiper-slide box">
+					               
+
+					                <div class="icons">
+					       
+					                    <a href="#" class="fas fa-heart"></a>
+					               </div>
+					                <div class="image">
+					                    <img src="image/Sale/1.jpg" alt="">
+					                               <div class="content"> 
+					                    <div class="price">$15.99 <span>$20.99</span></div>
+					                   <button class="btn"><a href="#" >add to cart</a></button> 
+					                </div> </div>
+					                
+					            </div>
+
+					        	    <div class="swiper-slide box">
+							               
+							                <div class="icons">
+							       
+							                    <a href="#" class="fas fa-heart"></a>
+							               </div>
+							                <div class="image">
+							                    <img src="image/Sale/Aot.jpg" alt="">
+							                </div>
+							                              <div class="content"> 
+							                    <div class="price">$15.99 <span>$20.99</span></div>
+							                   <button class="btn"><a href="#" >add to cart</a></button> 
+							                </div>
+							            </div>
+
+							            <div class="swiper-slide box">
+							               
+							                <div class="icons">
+							       
+							                    <a href="#" class="fas fa-heart"></a>
+							               </div>
+							                <div class="image">
+							                    <img src="image/Sale/3.jpg" alt="">
+							                </div>
+							                              <div class="content"> 
+							                    <div class="price">$15.99 <span>$20.99</span></div>
+							                   <button class="btn"><a href="#" >add to cart</a></button> 
+							                </div>
+							            </div>
+
+							            <div class="swiper-slide box">
+							               
+							                <div class="icons">
+							       
+							                    <a href="#" class="fas fa-heart"></a>
+							               </div>
+							                <div class="image">
+							                    <img src="image/Sale/5.jpg" alt="">
+							                </div>
+							                              <div class="content"> 
+							                    <div class="price">$15.99 <span>$20.99</span></div>
+							                   <button class="btn"><a href="#" >add to cart</a></button> 
+							                </div>
+							            </div>
+
+							            <div class="swiper-slide box">
+							               
+							                <div class="icons">
+							       
+							                    <a href="#" class="fas fa-heart"></a>
+							               </div>
+							                <div class="image">
+							                    <img src="image/Sale/6.jpg" alt="">
+							                </div>
+							                              <div class="content"> 
+							                    <div class="price">$15.99 <span>$20.99</span></div>
+							                   <button class="btn"><a href="#" >add to cart</a></button> 
+							                </div>
+							            </div>
+
+							            <div class="swiper-slide box">
+							               
+							                <div class="icons">
+							       
+							                    <a href="#" class="fas fa-heart"></a>
+							               </div>
+							                <div class="image">
+							                    <img src="image/Sale/7.jpg" alt="">
+							                </div>
+							                              <div class="content"> 
+							                    <div class="price">$15.99 <span>$20.99</span></div>
+							                   <button class="btn"><a href="#" >add to cart</a></button> 
+							                </div>
+							            </div>
+
+							            <div class="swiper-slide box">
+							               
+							                <div class="icons">
+							       
+							                    <a href="#" class="fas fa-heart"></a>
+							               </div>
+							                <div class="image">
+							                    <img src="./image/Sale/8.jpg" alt="">
+							                </div>
+							                              <div class="content"> 
+							                    <div class="price">$15.99 <span>$20.99</span></div>
+							                   <button class="btn"><a href="#" >add to cart</a></button> 
+							                </div>
+							            </div>
+
+							            <div class="swiper-slide box">
+							               
+							                <div class="icons">
+							       
+							                    <a href="#" class="fas fa-heart"></a>
+							               </div>
+							                <div class="image">
+							                    <img src="image/Sale/9.jpg" alt="">
+							                </div>
+							                              <div class="content"> 
+							                    <div class="price">$15.99 <span>$20.99</span></div>
+							                   <button class="btn"><a href="#" >add to cart</a></button> 
+							                </div>
+							            </div>
+
+							            
+					        </div>
+
+					        <div class="swiper-button-next"></div>
+					        <div class="swiper-button-prev"></div>
+
+					    </div>
+
+					</div>
+
+
+
+</section>
+<!-- featured section ends -->
+
+<section class="reviewbook" id="Reviewbook">
+		 <h1 class="startheading"> <span>Review Books</span> </h1>
+
+    <div class="swiper review">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+        	<div class="picture">
+	        	  <div class="profilepic" >
+	        	  	  	<img src="./image/my.png" alt="" >
+	        	  </div>	
+        	
+        	 </div>
+        	
+        	<div class="rev">
+        		<div class="name"> Muhammad USMAN </div>
+        		<div class="bkrv">
+        			<div class="star">
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        			</div>
+        			<p>
+        				I realy like the Manga of <a href="https://snk.manganyaa.com/">ATTACK ON TITAN</a>. Specially Character on an other class!
+        			</p>
+        		</div>
+        	</div>
+        </div>
+        <div class="swiper-slide">
+        	<div class="picture">
+	        	  <div class="profilepic" >
+	        	  	  	<img src="./image/review2.jpg" alt="" >
+	        	  </div>	
+        	
+        	 </div>
+        	
+        	<div class="rev">
+        		<div class="name"> Girl1 </div>
+        		<div class="bkrv">
+        			<div class="star">
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        			</div>
+        			<p>
+        				I have read <a href="https://urdureadings.com/peer-e-kamil-novel-by-umera-ahmed-pdf/">peer-e-kamil</a>. such a Beautiful Novel by Umera Ahmad.
+        			</p>
+        		</div>
+        	</div>
+        </div>
+        <div class="swiper-slide">
+        	<div class="picture">
+	        	  <div class="profilepic" >
+	        	  	  	<img src="./image/rev.jpg" alt="" >
+	        	  </div>	
+        	
+        	 </div>
+        	
+        	<div class="rev">
+        		<div class="name"> William </div>
+        		<div class="bkrv">
+        			<div class="star">
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star" style="color: #000;"></i>
+        			</div>
+        			<p>
+        			I realy love <a href="https://shakespeare.folger.edu/shakespeares-works/romeo-and-juliet/">Romeo and Juliet</a>. Such a lovely Story !
+        			</p>
+        		</div>
+        	</div>
+        </div>
+        <div class="swiper-slide">
+        	<div class="picture">
+	        	  <div class="profilepic" >
+	        	  	  	<img src="./image/pic-4.png" alt="" >
+	        	  </div>	
+        	
+        	 </div>
+        	
+        	<div class="rev">
+        		<div class="name"> April </div>
+        		<div class="bkrv">
+        			<div class="star">
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star" style="color: #000;"></i>
+        			</div>
+        			<p>
+        			 Reading such a book <a href="https://www.goodreads.com/en/book/show/30652405-the-wayfarer">The Wayfarer</a> is like spending a good time. Such a interseted Book.
+        			</p>
+        		</div>
+        	</div>
+        </div>
+        <div class="swiper-slide">
+        	<div class="picture">
+	        	  <div class="profilepic" >
+	        	  	  	<img src="./image/pic-3.png" alt="" >
+	        	  </div>	
+        	
+        	 </div>
+        	
+        	<div class="rev">
+        		<div class="name">James Patterson</div>
+        		<div class="bkrv">
+        			<div class="star">
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star"></i>
+        				<i class="fa-solid fa-star" style="color: #000;"></i>
+        				<i class="fa-solid fa-star" style="color: #000;"></i>
+        			</div>
+        			<p>
+        			<a href="https://fivebooks.com/book/life-and-fate-by-vasily-grossman/">Life and Fate,</a>	 the masterpiece by Soviet writer Vasily Grossman, is one of best I say.
+        			</p>
+        		</div>
+        	</div>
+        </div>
+       
+      </div>
+    </div>
+</section>
+
+<section class="newarrival" id="Newarrival">
+<h1 class="startheading"> <span>New Arrivals</span> </h1>
+
+	<div class="swiper newbook">
+		<div class="nextbook">
+			<div class="swiper-wrapper">
+				
+				<div class="swiper-slide">
+								<div class="sidepic">
+										<img src="./image/newarrival.jpg" alt="">
+								</div>
+		
+								<div class="sidecnt">
+									<h3 ><a href="https://mangaplus.shueisha.co.jp/titles/100009">Demon Slayer: Kimetsu no Yaiba</a></h3>
+										<div class="star">
+					        				<div class="check">
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				</div>
+					        				<div class="uncheck">
+					        				<i class="fa-solid fa-star" ></i>
+					        				<i class="fa-solid fa-star" ></i>
+					        				</div>
+					        			</div>
+									<p class="price">$15.99<span> $20.99</span></p>
+									<i class="shop fa-solid fa-cart-plus"></i>
+								</div>
+
+				</div>
+
+				<div class="swiper-slide">
+								<div class="sidepic">
+										<img src="./image/newarrival2.jpg" alt="">
+								</div>
+		
+								<div class="sidecnt">
+									<h3><a href="https://www.amazon.com/Legacy-Violence-History-British-Empire/dp/0307272427">Legacy of Violence: A History of the British Empire</a></h3>
+										<div class="star">
+					        				<div class="check">
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				</div>
+					        				<div class="uncheck">
+					        				<i class="fa-solid fa-star" ></i>
+					        				<i class="fa-solid fa-star" ></i>
+					        				</div>
+					        			</div>
+									<p class="price">$15.99<span> $20.99</span></p>
+									<i class="shop fa-solid fa-cart-plus"></i>
+								</div>
+
+				</div>
+
+
+				<div class="swiper-slide">
+								<div class="sidepic">
+										<img src="./image/newarrival3.jpg" alt="">
+								</div>
+		
+								<div class="sidecnt">
+									<h3><a href="https://www.amazon.com/Captain-America-Iron-Man-2021-2022-ebook/dp/B09RSMV3CB"> CAPTAIN AMERICA/IRON MAN: THE ARMOR & THE SHIELD</a></h3>
+										<div class="star">
+					        				<div class="check">
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				</div>
+					        				<div class="uncheck">
+					        				<i class="fa-solid fa-star" ></i>
+					        				<i class="fa-solid fa-star" ></i>
+					        				</div>
+					        			</div>
+									<p class="price">$15.99<span> $20.99</span></p>
+									<i class="shop fa-solid fa-cart-plus"></i>
+								</div>
+
+				</div>
+
+
+				<div class="swiper-slide">
+								<div class="sidepic">
+										<img src="./image/newarrival4.jpg" alt="">
+								</div>
+		
+								<div class="sidecnt">
+									<h3><a href="https://w4.bcmanga.com/"> Black Clover</a></h3>
+										<div class="star">
+					        				<div class="check">
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				</div>
+					        				<div class="uncheck">
+					        				<i class="fa-solid fa-star" ></i>
+					        				<i class="fa-solid fa-star" ></i>
+					        				</div>
+					        			</div>
+									<p class="price">$15.99<span> $20.99</span></p>
+									<i class="shop fa-solid fa-cart-plus"></i>
+								</div>
+					</div>			
+
+				<div class="swiper-slide">
+								<div class="sidepic">
+										<img src="./image/newarrival5.jpg" alt="">
+								</div>
+		
+								<div class="sidecnt">
+									<h3><a href="https://www.amazon.com/Lost-Valley-Death-Obsession-Himalayas/dp/0062965964"> lost in valley of death</a></h3>
+										<div class="star">
+					        				<div class="check">
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				</div>
+					        				<div class="uncheck">
+					        				<i class="fa-solid fa-star" ></i>
+					        				<i class="fa-solid fa-star" ></i>
+					        				</div>
+					        			</div>
+									<p class="price">$15.99<span> $20.99</span></p>
+									<i class="shop fa-solid fa-cart-plus"></i>
+								</div>
+
+				</div>
+
+				<div class="swiper-slide">
+								<div class="sidepic">
+										<img src="./image/newarrival6.jpg" alt="">
+								</div>
+		
+								<div class="sidecnt">
+									<h3><a href="https://www.google.com/search?q=emily+henry+book+lovers&sxsrf=ALiCzsY2gqQjljw-vNrI0QXynHh4mgGeQA%3A1653722300134&ei=vMyRYqbHB4qX9u8PhfOT2AM&ved=0ahUKEwimlYbS04H4AhWKi_0HHYX5BDsQ4dUDCA4&uact=5&oq=emily+henry+book+lovers&gs_lcp=Cgdnd3Mtd2l6EAMyCQgjECcQRhD7ATIFCAAQgAQyBQgAEIAEMgUIABCABDoECAAQRzoECCMQJzoGCAAQHhAWOgUILhCABEoECEEYAEoECEYYAFDMA1ilE2CuFWgAcAJ4AIABmAKIAf4PkgEDMi04mAEAoAEByAEIwAEB&sclient=gws-wiz">Book Lovers</a></h3>
+										<div class="star">
+					        				<div class="check">
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				<i class="fa-solid fa-star"></i>
+					        				</div>
+					        				<div class="uncheck">
+					        				<i class="fa-solid fa-star" ></i>
+					        				<i class="fa-solid fa-star" ></i>
+					        				</div>
+					        			</div>
+									<p class="price">$15.99<span> $20.99</span></p>
+									<i class="shop fa-solid fa-cart-plus"></i>
+								</div>
+
+				</div>
+
+				</div>
+			</div>
+				<div class="swiper-button-next"></div>
+  	    <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+  
+		 </div>
+	</div>
+</section>
+
+<section class="aboutus" id="about">
+			
+				<div class="aboutuscnt">
+						<div class="head">
+							<h1>About Us</h1>
+						</div>
+					
+						<div class="start">Wellcome to span <span>Book Tycoon.</span> </div>
+						<p>We are here to provide the best & latest news about the <span>books</span>, you wanted to Know. Its a big struggel to find the best location to buy book or find for that very purpose we <span> Book Tycoon</span> are here for you. Don't worry we have many catogaries, you like <span> love story</span> we got it , you like <span> history </span> we got it, you love <span> adventure and action </span> we got you, you are fan of <span> DC or Marvel</span> we got <span> Comics </span> and also how not to forgot <span> anime </span>  we love them to <span> Manga. </span> </p>
+				</div>
+
+				<div class="aboutuslg">
+					<img src="./image/aboutuslogo.jpg">
+				</div>
+
+
+</section>
+
+	</main>
+	
+<section class="footer">
+
+	<img src="./image/worldmap.png">
+    <div class="box-container">
+
+        <div class="box">
+            <h3>our locations</h3>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> Pakistan </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> USA </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> russia </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> Korea </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> japan </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#homebook"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#Featurebook"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="#Newarrival"> <i class="fas fa-arrow-right"></i> arrivals </a>
+            <a href="#Reviewbook"> <i class="fas fa-arrow-right"></i> reviews </a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#about"> <i class="fas fa-arrow-right"></i> account info </a>
+            <a href="#about"> <i class="fas fa-arrow-right"></i> ordered items </a>
+            <a href="#about"> <i class="fas fa-arrow-right"></i> privacy policy </a>
+            <a href="#about"> <i class="fas fa-arrow-right"></i> payment method </a>
+            <a href="#about"> <i class="fas fa-arrow-right"></i> our serivces </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a onmouseup="Contactus()"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-envelope"></i> usman03025@gmail.com </a>
+        </div>
+		
+		<div></div>		
+    <div class="share">
+        <a onmouseup="Contactus()" class="fab fa-facebook-f"></a>
+        <a onmouseup="Contactus()" class="fab fa-twitter"></a>
+        <a onmouseup="Contactus()" class="fab fa-instagram"></a>
+        <a onmouseup="Contactus()" class="fab fa-linkedin"></a>
+        <a onmouseup="Contactus()" class="fab fa-pinterest"></a>
+    </div>
+
+
+    </div>
+  	
+   
+</section>
+
+
+
+
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="./javascript/script.js" defer></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+</html>

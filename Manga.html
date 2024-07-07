@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Manga - BooksTycoon</title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!-- using swipper for slider swipper from https://swiperjs.com/get-started -->
+	<link rel="stylesheet" href="./style/page.css">
+	<link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css">
+	
+</head>
+<body>
+		<header>
+			<div class="navbar">
+					<div class="nav-bar">
+			<a href="./index.html"><i class="fas fa-house"></i></a>
+			<a href="./index.html">featured</a>
+			<a href="./index.html">Review</a>
+			<a href="./index.html">Arrival</a>
+			
+			<div>	
+			<a  id="dropd" > Book <i class="fa-solid fa-caret-down"></i></a>
+			<div class="dropdown">
+				
+				<div class="dropdown-content"><a href="./Romantic.html">Romantic</a></div>
+				<div class="dropdown-content"><a href="./Comic.html">Comic</a></div>
+				<div class="dropdown-content"><a href="./Manga.html">Manga</a></div>
+				<div class="dropdown-content"><a href="./Historical.html">Historical Fiction</a></div>
+				<div class="dropdown-content"><a href="./Action.html">Action & Adventure</a></div>
+			</div>
+			</div>
+			<a href="./index.html">About Us</a>
+			<a  onmouseup="Contactus()">Contact Us</a>
+		<div class="toggler">
+			<img src="./image/toggle.png" alt="">	
+			</div>
+			
+		<section>
+			<div class="contactus">
+				
+				<div class="backgroundimg"><img src="./image/bgimgcontact.jpg"></div>
+				
+				<div class="cross" ><i class="fa-solid fa-square-xmark" onclick="crossbox()"></i></div>
+				<div class="v-box">
+					<h1>Thank You</h1>
+					<i class="fa-solid fa-face-smile-beam"></i>
+					<p>We have Recived Your Message</p>
+					<div class="v-end"><i class="fa-solid fa-circle-xmark" onclick="removevbox()"></i></div>
+				</div>	
+					
+
+					<form onsubmit="sendmail()">
+			        	
+			        	<div class="cbox">
+			        		<h1 class="text-center">CONTACT US</h1>
+			        		<div class="rbox">
+				        		
+				        		<div class="cbox">	
+				        			<input type="text" id="name" placeholder="User name">
+				        			<p id="e1"></p>
+				        		</div>
+
+				        		<div class="cbox">
+				        		<input type="email" id="mail" onkeydown="validmail()" placeholder="Email@mail.com">
+				        		<p id="e2"></p>
+			        		
+				        		<div class="valid"><i class="fa"><i class="fa-solid fa-circle-check"></i></div>
+			        			<div class="invalid"><i class="fa-solid fa-circle-xmark"></i></i></div>
+			        		</div>
+			        		</div>
+			        		<span>Feed Back</span>	
+			        		<textarea name="feedback" id="message" ></textarea>
+
+			        		<button type="submit" id="send" onclick="validate();"  > SEND</button>
+			        	</div>
+
+
+			        		<!--onmouseup="thankyou()"-->
+					</form>
+		
+			</div>
+							
+		</section>
+
+
+	</header>
+	
+		
+
+		<main>
+				<div class="start">
+					<h1 class="heading">
+						Manga
+					</h1>
+					<p> Book/<span> Manga </span></p>
+				
+				</div>
+				<div class="Mangaslider"></div>
+
+				<section class="block">
+			
+					<div class="blockcnt">
+							<div class="head">
+								<h1>Manga</h1>
+							</div>
+						
+							<p>Manga (Japanese: 漫画 [maŋga])[a] are comics or graphic novels originating from Japan. Most manga conform to a style developed in Japan in the late 19th century, and the form has a long prehistory in earlier Japanese art.
+							 <a href="https://en.wikipedia.org/wiki/Manga"> Read More</a> </p>
+					</div>
+
+					<div class="blocklg">
+						<img src="./image/M1.jpg">
+					</div>
+
+
+				</section>
+
+
+				<section class="block">
+			
+					<div class="blockcnt">
+							<div class="head">
+								<h1>Famous - Attack on Titan</h1>
+							</div>
+							<div class="start">By <span> - <a href="https://en.wikipedia.org/wiki/William_Shakespeare" >Hajime Isayama</a> </span> </div>
+				
+							<p>Attack on Titan/Shingeki no kyojin Manga (Japanese: 進撃の巨人 Hepburn: Shingeki no Kyojin, lit. “The Attack Titan”) is a Japanese manga series both written and illustrated by Hajime Isayama <a href="https://en.wikipedia.org/wiki/Batman:_The_Killing_Joke"> Read More</a> </p>
+					</div>
+
+					<div class="blocklg">
+						<img src="./image/M2.jpg">
+					</div>
+
+
+				</section>
+
+		</main>
+		<section class="footer">
+
+	<div class="box-container">
+
+        <div class="box">
+            <h3>our locations</h3>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> Pakistan </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> USA </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> russia </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> Korea </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-map-marker-alt"></i> japan </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> arrivals </a>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> reviews </a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> account info </a>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> ordered items </a>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> privacy policy </a>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> payment method </a>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> our serivces </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a onmouseup="Contactus()"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+            <a onmouseup="Contactus()"> <i class="fas fa-envelope"></i> usman03025@gmail.com </a>
+        </div>
+		
+		<div></div>		
+    <div class="share">
+        <a onmouseup="Contactus()" class="fab fa-facebook-f"></a>
+        <a onmouseup="Contactus()" class="fab fa-twitter"></a>
+        <a onmouseup="Contactus()" class="fab fa-instagram"></a>
+        <a onmouseup="Contactus()" class="fab fa-linkedin"></a>
+        <a onmouseup="Contactus()" class="fab fa-pinterest"></a>
+    </div>
+
+
+    </div>
+  	
+   
+</section>
+
+
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="./javascript/script.js" defer></script>
+	<script type="text/javascript" src="./javascript/page.js" defer></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</body>
+</html>

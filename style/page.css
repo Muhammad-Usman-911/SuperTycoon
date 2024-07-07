@@ -1,0 +1,941 @@
+*{
+	font-family: Verdana, Arial, sans-serif;
+}
+
+
+:root{
+	--theme-color: #5758BB;
+	--nav-Primary-color: rgb(0 0 0 / 50%);
+	--Primary-color: rgb(0 0 0 / 100%);
+	--secondary-color: white;
+	--top-bar: lightgrey;
+	--ContactPrimary-color:rgba(1,1,1,0.6); ;
+}
+body.active{
+	--theme-color: #5758BB;
+	--nav-Primary-color: rgb(190 190 190 / 50%);
+	--Primary-color: rgb(280 280 280 / 100%);
+	--secondary-color: black;
+	--top-bar: darkgrey;
+	--ContactPrimary-color:rgba(180,180,180,0.6); 	
+}
+
+
+body{
+	overflow-x: hidden;
+}
+
+/*Scroll-bar_start*/
+
+::-webkit-scrollbar{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track{
+		background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb{
+	background: var(--theme-color);
+}
+/*Scroll-bar_End*/
+
+
+/*TopBar-Start*/
+
+/*nav- Start*/
+
+.nav-bar{
+
+	position: absolute	;
+	width: 100%;
+	left: 0;
+	right: 0;
+	top: 0%;
+	padding: 15px;
+	color: var(--secondary-color);
+	z-index: 1;
+	backdrop-filter:blur(2px);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	transition: .06s;
+	background: var(--theme-color);
+}
+
+.nav-bar a{
+	position: relative;
+	text-transform: uppercase;
+	color: var(--top-bar);
+	text-decoration: none;
+	margin: 0px 8px;
+	font-size:15px ;
+	transition: .3s;
+	cursor: pointer;
+	}
+
+.nav-bar a::after{
+	content: "";
+	position: absolute;
+	height: 3px;
+	width: 0%;
+	bottom: -20%;
+	left: 0;
+	background: var(--secondary-color);
+	transition: .5s;
+}
+
+
+.nav-bar a:hover{
+		color: var(--secondary-color);
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+
+a:hover::after{
+	width: 100%;
+}
+
+#dropd{
+	vertical-align: baseline	;
+}
+.dropdown	{
+	position: absolute	;
+	background: var(--Primary-color);
+	width: 15%;
+	top: 80%;
+	left: 50%;
+	padding: 10px;
+	flex-direction: column;
+	flex-wrap: wrap	;
+	display:none;
+	width: 30%;
+}
+
+.dropdown::after{
+	position: absolute;
+	background:var(--Primary-color);
+	color: transparent;
+	content: "*";
+	width: 10px;
+	height: 10px;
+	overflow-y:hidden ;
+	transform:rotate(45deg);
+	bottom: 96%;
+	left: 14%;
+}
+
+.dropdown a{
+color: 	var(--primary-color) !important;
+
+}
+.dropdown > div {
+	background: ;
+	color: var(--primary-color);
+	width: 100%;
+	height: 100%;
+	margin: 10px 0px;
+}
+.dropdown.active{
+	display: grid;
+}
+
+.dropdown  a::after{
+	content: "";
+	position: absolute;
+	height: 3px;
+	width: 0%;
+	bottom: -20%;
+	left: 0;
+	background: var(--theme-color);
+	transition: .5s;
+}
+
+.dropdown a:hover::after{
+	width: 100%;
+}
+
+.toggler
+{	
+	position: absolute;
+	right: 4%	;
+	margin-top:-5px ;
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	border-radius: 50px;
+	border: 2px solid var(--Primary-color);
+	cursor: pointer;
+	transition: .3s;
+	color: var(--Primary-color);
+	font-size: 25px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.toggler:hover{
+	width: 33px;
+	height: 33px;
+	
+}
+
+.toggler img{
+	width: 100%;
+	height: 100%;
+}
+
+
+/*
+	Contact Us
+*/
+
+.contactus{
+	width: 80%;
+	
+	position: fixed;
+	z-index: 10;
+	border-radius: 6px;
+	top: 20%;
+	left: 15%;
+	color: var(--secondary-color);
+	backdrop-filter: blur(2px);
+	box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8);
+	display: none;
+	z-index: 99999999;
+	background: transparent;
+}
+
+
+
+.backgroundimg >img
+{
+	width: 100%;
+	height: 100%;
+}
+
+
+.contactus .cross{
+	cursor: pointer;	
+	font-size: 28px;
+	position: absolute;
+	right: -0% ;
+	top: -1%;
+	transition: .5s;
+}
+
+.contactus .cross:hover {
+		font-size: 35px;
+}
+
+
+/* FORM */
+
+.contactus form{
+	width: 60%;
+	height: 60%;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+
+.contactus .cbox{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+
+}
+
+.rbox{
+  width: 100% ;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex: 1;	
+}
+
+.contactus .text-center{
+	text-align: center;
+}
+
+.contactus h1{
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 5px;
+  margin-bottom:20px ;
+}
+
+
+.contactus input[type=text], input[type=email]{
+    background-color:var(--ContactPrimary-color);
+ 	padding: 10px;
+	border: 2px solid var(--secondary-color) ;
+    color: var(--secondary-color);	
+    width: 88%;
+    outline: none;
+    margin: 20px 20px 0 0;
+    border-left: none;
+    border-right: none;
+   	border-top: none;
+   }
+
+.contactus input[type=text]:focus , input[type=email]:focus{
+  border: 3px solid var(--theme-color);
+  background-color:rgba(1,1,1,0.4);
+  color: white; 
+  border-left: none;
+    border-right: none;
+   	border-top: none;
+}
+
+
+.valid{
+	text-align:	 center;
+	font-size: 25px;
+	content: "";
+	border-radius: 50px;
+	position: fixed;
+	background:transparent;
+	color: #00ff00;
+	width: 35px;
+	height: 35px;
+	top: 23%;
+	right: 2%;
+	display:none;
+}
+.invalid{
+	text-align:	 center;
+	font-size: 25px;
+	content: "";
+	border-radius: 50px;
+	position: fixed;
+	background:transparent;
+	color: red;
+	width: 30px;
+	height: 30px;
+	top: 23%;
+	right: 2%;
+	display:none;
+}
+
+
+
+.valid > i , .invalid > i{
+	margin-top: 5px;
+}
+
+
+
+.contactus button {
+	border: none;
+	position:  relative;
+	width: 30%;
+	height: 40%;
+	margin:30px 170px  ; 
+	padding: 10px;
+ 	background-color:transparent; 
+    color:var(--secondary-color);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+
+.contactus button:before{
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border: 4px solid transparent;
+  background: transparent;
+  bottom: 0%;
+  left: 0%;
+  box-sizing: border-box;
+}
+
+.contactus button:hover:before{
+  border: 4px solid var(--Primary-color);
+  width: 100%;
+  height: 100%;
+  border-right: none;
+  border-top: none;
+  transition: height .3s linear .3s,
+              width .3s linear .3s;
+}
+.contactus button:after{
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border: 4px solid transparent;
+  background: transparent;
+  bottom: 0%;
+  right: 0%;
+  box-sizing: border-box;
+}
+
+.contactus button:hover:after{
+  border: 4px solid var(--theme-color);
+  width: 100%;
+  height: 100%;
+  border-left: none;
+  border-bottom: none ;
+  transition: height .3s linear .3s,
+              width .3s linear .3s;
+}
+
+.contactus span{
+	margin: 20px 10px 0px 0px;
+	font-size: 28px;
+	letter-spacing: 3px;
+}
+.contactus textarea{
+	margin: 10px 0 0 0;
+	width: 90%;
+	height: 70px;
+	background: var(--ContactPrimary-color);
+	margin-inline:20px auto ;
+	outline: none;
+	border: 2px solid var(--secondary-color);
+	color:var(--secondary-color);
+}
+.contactus textarea:focus	{
+
+	outline: none;
+  border: 5px solid var(--theme-color);
+  background-color:rgba(1,1,1,0.5);
+  color: white; 
+}
+
+.rbox p{
+	margin-inline:	60px ;
+	text-shadow: 2px 2px black;
+	letter-spacing: 2px;
+}
+
+
+/* FORM END */
+
+
+/* Romantic book -Start*/
+
+.start{
+	margin-top: 5%;
+	width: 100%;
+	background: var(--top-bar);
+	padding: 10px;
+	padding-left: 30px;
+	letter-spacing: 3px;
+	margin-left: -12px;
+}
+
+.start p{
+	margin-left: 50px;	
+}
+.start p span{
+	color: var(--theme-color);
+	font-weight: bold;
+}
+
+
+
+@keyframes slider-anime{
+	0%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4GDV0R0w6mOUkiCBs8JkdnzMiWhsaADYYbg&usqp=CAU) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	17%{
+
+	background:url(https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+		}
+
+	34%{
+
+	background:url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YWVzdGhldGljJTIwYm9va3xlbnwwfHwwfHw%3D&w=1000&q=80) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	52%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8SMoPs8_K1lEDFoB9BndI3sJqT3XLAS7ajflIjTJLlDS_HxlvLxmjvtrkWajB2Afw-IM&usqp=CAU) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	69%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-h0yL6tNu39aChgTBGcs3Al2GUpKHFmGXuNzNInBCQFg0WvW7qvDrUXPTzMx_dxpk_U&usqp=CAU) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;}
+
+	86%{
+
+	background:url(data:image/jpeg;base64,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) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+	100%{
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4GDV0R0w6mOUkiCBs8JkdnzMiWhsaADYYbg&usqp=CAU) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	}
+
+}
+
+
+.slider{
+	position: absolute;
+	top: 15%;
+	left: 0;
+	transition:.4s ;
+	margin: 90px auto ;
+	width: 100%;
+	height: 75%;
+	background:url(https://images.unsplash.com/photo-1523054147397-21c07b58c90e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bG92ZSUyMGJvb2tzfGVufDB8fDB8fA%3D%3D&w=1000&q=80) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	animation: slider-anime 30s linear infinite;
+	
+}
+
+
+
+
+.block{
+	width: 100%;
+	height: 70%;
+	position: absolute;
+	bottom: -80%;
+	display: grid;
+	grid-template-areas: ' aboutcontent   aboutlogo  ';
+	grid-row-gap: 20px;
+	color: black;
+}
+
+.block:last-child{
+	bottom: -150%;
+	
+}
+
+.blockcnt{
+	grid-area: aboutcontent;
+	background: white;
+}
+
+.block .blockcnt .head{
+	margin: 10px 60px ;
+	font-size: 30px;
+	text-transform: uppercase;
+	border-left: 5px solid var(--theme-color);
+	padding-left: 3px;
+	width: 50%;
+}
+
+.block .blockcnt p{
+	margin: 20px 100px;
+	color: black;
+	padding: 5px;
+	width: 55%;
+	font-size: 16px;
+}
+
+.block .blockcnt .start{
+	margin: 20px 100px;
+	color: black;
+	padding: 5px;
+	width: 55%;
+	font-size: 18px;
+}
+.block .blockcnt  p a , .start a{
+	color: var(--theme-color);
+	font-size: 18px;
+	text-decoration: none;
+}
+.blocklg img{
+	width: 60%;
+	height: 60%;
+	grid-area: aboutlogo;
+	margin-block: 50px;
+	margin-right:60px ;
+	box-shadow: 4px 5px 1px black;
+}
+
+.block:last-child .blocklg img{
+	margin-block: 110px;
+		margin-right:20px ;
+
+}
+		
+
+.footer{
+	position: absolute;
+	bottom: -260%;
+	width: 100%;
+	height: 100%;
+	background: var(--Primary-color);
+	color: var(--secondary-color);
+	left: 0;
+	}
+
+.footer img{
+	opacity: 0.3;
+	height: 100%;
+	width: 100%;
+}
+
+.footer .box-container{
+	position: absolute;
+	top: 0;
+	margin-top: 10px;
+	margin-left: 100px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-areas: 'auto auto auto';
+	grid-column-gap: 10px;
+}
+
+.footer .box-container .box{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: center;
+	margin: 50px;
+	margin-bottom: 20px;
+
+}
+
+.footer .box-container .box h3{
+	text-transform: uppercase;
+	margin: 15px;
+}
+
+
+	
+.footer .box-container .box a{
+	font-size: 12px;
+	text-transform: uppercase;
+	color: var(--secondary-color);
+	transition: .2s;
+	margin-block:10px ;
+	cursor: pointer;
+}
+
+.footer .box-container .box i{
+	color: var(--theme-color);
+}
+
+
+.footer .box-container .box a:hover{
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	color: var(--theme-color);
+	font-weight: bold;
+}
+
+.footer .box-container .share a{
+	margin-top: 100px;
+	font-size: 30px;
+	color: var(--secondary-color);
+	margin-inline:15px ;
+	}
+.footer .box-container .share a:hover{
+	font-size: 35px;
+	color: var(--theme-color);
+
+}
+
+
+/* Historical Css slider*/
+
+@keyframes slider-H{
+	0%{
+
+	background:url(https://t4.ftcdn.net/jpg/00/49/71/35/360_F_49713581_8kDklyvFqPNaAP4CUlS5gpCcXKgZGQwE.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	17%{
+
+	background:url(https://images.unsplash.com/photo-1472173148041-00294f0814a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aGlzdG9yeXxlbnwwfHwwfHw%3D&w=1000&q=80) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+		}
+
+	34%{
+
+	background:url(https://w0.peakpx.com/wallpaper/649/328/HD-wallpaper-book-books-brown-old-books-old-old-book.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	52%{
+
+	background:url(https://wallpaperaccess.com/full/1927083.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	69%{
+
+	background:url(https://t4.ftcdn.net/jpg/02/67/83/03/360_F_267830347_XYaOxKd61vpGvHiCr8uxLhv0RFGfNI2l.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;}
+
+	86%{
+
+	background:url(https://thumbs.dreamstime.com/b/old-book-flying-letters-magic-light-background-bookshelf-library-ancient-books-as-symbol-knowledge-history-218722219.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+	100%{
+	background:url(https://t4.ftcdn.net/jpg/00/49/71/35/360_F_49713581_8kDklyvFqPNaAP4CUlS5gpCcXKgZGQwE.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	}
+
+}
+
+
+.historicalslider{
+	position: absolute;
+	top: 15%;
+	left: 0;
+	transition:.4s ;
+	margin: 90px auto ;
+	width: 100%;
+	height: 75%;
+	background:url(https://wallpaperaccess.com/full/1927083.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	animation: slider-H 30s linear infinite;
+	
+}
+
+
+
+/* Historical Css slider*/
+
+@keyframes slider-C{
+	0%{
+
+	background:url(https://images.hdqwalls.com/wallpapers/batman-red-series-comic-cover-4k-l1.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	17%{
+
+	background:url(https://images7.alphacoders.com/367/367540.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+		}
+
+	34%{
+
+	background:url(https://s4.wallpapermoderna.com/wallpaper/8330/868/guardians-of-the-galaxy-rpg-games-marvel-comics-cover-art-1936-hd-download-games-1936-preview.jpeg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	52%{
+
+	background:url(https://sportshub.cbsistatic.com/i/2022/02/02/9bae2727-8cf6-4a1a-b4da-aeb3557c167b/savage-spider-man-1-cover.jpg?auto=webp&width=756&height=1148&crop=0.659:1,smart) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	69%{
+
+	background:url(https://wallpaperboat.com/wp-content/uploads/2019/06/comic-book-10.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;}
+
+	86%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1PXoUt7DFz90HaukJ3ty7r2J9TwPvHwaTzg&usqp=CAU) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+	100%{
+	background:url(https://images.hdqwalls.com/wallpapers/batman-red-series-comic-cover-4k-l1.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	}
+
+}
+
+
+.Comicslider{
+	position: absolute;
+	top: 15%;
+	left: 0;
+	transition:.4s ;
+	margin: 90px auto ;
+	width: 100%;
+	height: 75%;
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1PXoUt7DFz90HaukJ3ty7r2J9TwPvHwaTzg&usqp=CAU) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	animation: slider-C 30s linear infinite;
+	
+}
+
+
+
+
+
+@keyframes slider-M{
+	0%{
+
+	background:url(https://flixable.b-cdn.net/hulu/small/attack-on-titan.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	17%{
+
+	background:url(https://wallpapers.com/images/high/cover-6-wallpaper-vinlandsaga-95k6loc00s0sj0a0.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+		}
+
+	34%{
+
+	background:url(https://free4kwallpapers.com/uploads/originals/2015/07/19/one-piece-cover.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	52%{
+
+	background:url(https://i.pinimg.com/originals/a8/91/d9/a891d9ddd8472c3fd84bf85a80693ac9.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	69%{
+
+	background:url(https://wallpapercave.com/wp/wp2875027.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;}
+
+	86%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJT99fF6RsvXq-zBruXIU8TA-Pq31hHtMf5Q&usqp=CAU) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+	100%{
+	background:url(https://flixable.b-cdn.net/hulu/small/attack-on-titan.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	}
+
+}
+
+
+.Mangaslider{
+	position: absolute;
+	top: 15%;
+	left: 0;
+	transition:.4s ;
+	margin: 90px auto ;
+	width: 100%;
+	height: 75%;
+	background:url(https://flixable.b-cdn.net/hulu/small/attack-on-titan.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	animation: slider-M 30s linear infinite;
+	
+}
+
+
+
+@keyframes slider-A{
+	0%{
+
+	background:url(https://wallpaperaccess.com/full/2104925.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	17%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6kOLqFA3x7mDBK6kTz0oSGjRzyVioaKVPQ&usqp=CAU) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+		}
+
+	34%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDBQ7eaKpEdNwM4pWR6Yu1MceifzNo_KmF6w&usqp=CAU) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	52%{
+
+	background:url(https://wallpaperaccess.com/full/2104897.jpg) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	}
+
+	69%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm994G5dSkPdd5DNo0FOqkX5o7bsZ5MAXqVw&usqp=CAU) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;}
+
+	86%{
+
+	background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWZcWnJLkbBM2xJjAT6vZXREWdPdrnFEdfLQ&usqp=CAU) ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+	100%{
+	background:url(https://wallpaperaccess.com/full/2104925.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	}
+
+}
+
+
+.Actionslider{
+	position: absolute;
+	top: 15%;
+	left: 0;
+	transition:.4s ;
+	margin: 90px auto ;
+	width: 100%;
+	height: 75%;
+	background:url(https://wallpaperaccess.com/full/2104925.jpg) ;	
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	animation: slider-A 30s linear infinite;
+	
+}
+
+
+
